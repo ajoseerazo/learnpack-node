@@ -78,4 +78,4 @@ const Console = {
   },
 };
 
-module.exports = { getMatches, cleanStdout, indent, Console, getPrompts };
+module.exports = { getMatches, cleanStdout, indent, Console };
