@@ -19,6 +19,9 @@ module.exports = {
     const header = fs.readFileSync(path.resolve(__dirname,'./utils/prepend.compile.js'), "utf8");
 
     const result = await node.runSource(`${header} ${content}`, { stdin: inputs.join('\n') })
+
+    console.log("STDOUT", result.stdout);
+
     if(result.exitCode > 0) throw CompilationError(result.stderr);
     return Utils.cleanStdout(result.stdout, promptsValues)    
   },
